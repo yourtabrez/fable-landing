@@ -47,10 +47,17 @@
         to help shape the future of storytelling with us.
       </p>
 
-      <a href="#" class="cta-button">
-        <span class="cta-label">APPLY FOR</span>
-        <span class="cta-main">Early Access</span>
-      </a>
+      <button class="cta-button" id="openFormBtn">
+
+        <span class="cta-label">
+          APPLY FOR
+        </span>
+
+        <span class="cta-main">
+          Early Access
+        </span>
+
+      </button>
 
     </section>
 
@@ -106,15 +113,15 @@
 
     <div class="socials">
 
-      <a href="#" aria-label="LinkedIn">
+      <a href="https://www.linkedin.com/company/zyralab" aria-label="LinkedIn">
         <img src="./assets/linkedin.svg" alt="" />
       </a>
 
-      <a href="#" aria-label="Instagram">
+      <a href="https://www.instagram.com/labzyra/" aria-label="Instagram">
         <img src="./assets/instagram.svg" alt="" />
       </a>
 
-      <a href="#" aria-label="X">
+      <a href="https://x.com/labzyra" aria-label="X">
         <img src="./assets/x.svg" alt="" />
       </a>
 
@@ -123,8 +130,8 @@
     <div class="footer-bottom">
 
       <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+        <a href="https://docs.google.com/document/d/1Axi_kWKTOYsJ65IZuCqoUgO8gasDH2fRif_5PHAmY3U/edit?usp=sharing">Privacy Policy</a>
+        <a href="https://docs.google.com/document/d/18F7-KLL_uhVSHjILKec7DEQHlHbIBLPNMGOa_INdUXg/edit?usp=sharing">Terms of Use</a>
       </div>
 
       <p class="copyright">
@@ -134,6 +141,174 @@
     </div>
 
   </footer>
+
+  <!-- ========================================
+     FABLE EARLY ACCESS POPUP
+======================================== -->
+
+<div class="form-popup" id="formPopup">
+
+  <div class="form-overlay" id="closePopup"></div>
+
+  <div class="form-container">
+
+    <button class="close-btn" id="closeBtn">×</button>
+
+    <h2>Join Fable Early Families</h2>
+
+    <p class="form-subtext">
+      Selected families may receive early access before public launch.
+    </p>
+
+    <form
+      id="earlyAccessForm"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSeCMzyxlo9mpSDvW3yO_nlMkARu8zDjhjxkdJv_LFT3b0uXEw/formResponse"
+      method="POST"
+      target="hidden_iframe"
+    >
+
+      <!-- Parent Name -->
+      <input
+        type="text"
+        name="entry.1879647864"
+        placeholder="Parent Name"
+        required
+      />
+
+      <!-- Child Age -->
+      <select
+        name="entry.1433469341"
+        required
+      >
+
+        <option value="">
+          Child's Age
+        </option>
+
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+
+      </select>
+
+      <!-- Screen Time -->
+      <select
+        name="entry.1620559537"
+        required
+      >
+
+        <option value="">
+          Daily Screen Time
+        </option>
+
+        <option value="Less than 1 hour">
+          Less than 1 hour
+        </option>
+
+        <option value="1–2 hours">
+          1–2 hours
+        </option>
+
+        <option value="2–4 hours">
+          2–4 hours
+        </option>
+
+        <option value="More than 4 hours">
+          More than 4 hours
+        </option>
+
+      </select>
+
+      <!-- Biggest Concern -->
+      <select
+        name="entry.948239175"
+        required
+      >
+
+        <option value="">
+          Biggest Concern
+        </option>
+
+        <option value="Too much screen time">
+          Too much screen time
+        </option>
+
+        <option value="Addictive content">
+          Addictive content
+        </option>
+
+        <option value="Low-quality learning">
+          Low-quality learning
+        </option>
+
+        <option value="Unsafe/inappropriate content">
+          Unsafe/inappropriate content
+        </option>
+
+        <option value="Lack of creativity">
+          Lack of creativity
+        </option>
+
+      </select>
+
+      <!-- Interest -->
+      <select
+        name="entry.923272865"
+        required
+      >
+
+        <option value="">
+          Would You Try Fable?
+        </option>
+
+        <option value="Definitely">
+          Definitely
+        </option>
+
+        <option value="Maybe">
+          Maybe
+        </option>
+
+        <option value="Not sure">
+          Not sure
+        </option>
+
+      </select>
+
+      <!-- WhatsApp -->
+      <input
+        type="tel"
+        name="entry.1163561741"
+        placeholder="WhatsApp Number"
+        required
+      />
+
+      <button
+        type="submit"
+        class="submit-btn"
+      >
+        Join Early Access
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<!-- HIDDEN IFRAME -->
+
+<iframe
+  name="hidden_iframe"
+  id="hidden_iframe"
+  style="display:none;"
+></iframe>
 
   <script src="script.js"></script>
 
