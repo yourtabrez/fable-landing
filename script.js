@@ -53,9 +53,7 @@ const closeOverlay =
 const form =
   document.getElementById('earlyAccessForm');
 
-// ========================================
 // OPEN POPUP
-// ========================================
 
 openBtn.addEventListener('click', () => {
 
@@ -65,9 +63,7 @@ openBtn.addEventListener('click', () => {
 
 });
 
-// ========================================
 // CLOSE FUNCTION
-// ========================================
 
 function closeForm() {
 
@@ -77,30 +73,11 @@ function closeForm() {
 
 }
 
-// ========================================
 // CLOSE EVENTS
-// ========================================
 
 closeBtn.addEventListener('click', closeForm);
 
 closeOverlay.addEventListener('click', closeForm);
-
-// ========================================
-// ESC KEY CLOSE
-// ========================================
-
-document.addEventListener('keydown', (e) => {
-
-  if (
-    e.key === 'Escape' &&
-    popup.classList.contains('active')
-  ) {
-
-    closeForm();
-
-  }
-
-});
 
 // ========================================
 // FORM SUBMIT
@@ -108,39 +85,9 @@ document.addEventListener('keydown', (e) => {
 
 form.addEventListener('submit', () => {
 
-  // disable button during submit
-
-  const submitBtn =
-    form.querySelector('.submit-btn');
-
-  submitBtn.disabled = true;
-
-  submitBtn.innerText =
-    'Submitting...';
-
-  // allow Google Forms submission first
-
   setTimeout(() => {
 
-    const formContainer =
-      popup.querySelector('.form-container');
-
-    formContainer.innerHTML = `
-
-      <button
-        class="close-btn"
-        id="successCloseBtn"
-      >
-        ×
-      </button>
-
-      <h2>
-        Join Fable Early Families
-      </h2>
-
-      <p class="form-subtext">
-        Selected families may receive early access before public launch.
-      </p>
+    form.innerHTML = `
 
       <div class="success-message">
 
@@ -155,15 +102,6 @@ form.addEventListener('submit', () => {
       </div>
 
     `;
-
-    // close button after success
-
-    document
-      .getElementById('successCloseBtn')
-      .addEventListener(
-        'click',
-        closeForm
-      );
 
   }, 1200);
 
