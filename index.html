@@ -17,6 +17,7 @@
 
   <link rel="preload" href="./fonts/Avenir-Black.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="./fonts/Avenir-Light.ttf" as="font" type="font/ttf" crossorigin>
+  <meta name="theme-color" content="#f7f5f2" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -31,7 +32,7 @@
         src="./assets/hero-child.png"
         alt="Child imagining a story world"
         class="hero-image"
-        loading="eager"
+        fetchpriority="high"
       />
     </section>
 
@@ -164,7 +165,8 @@
       id="earlyAccessForm"
       action="https://docs.google.com/forms/d/e/1FAIpQLSeCMzyxlo9mpSDvW3yO_nlMkARu8zDjhjxkdJv_LFT3b0uXEw/formResponse"
       method="POST"
-      target="hidden_iframe"
+      target="_blank"
+      autocomplete="off"
     >
 
       <!-- Parent Name -->
@@ -211,12 +213,12 @@
           Less than 1 hour
         </option>
 
-        <option value="1–2 hours">
-          1–2 hours
+        <option value="1-2 hours">
+          1-2 hours
         </option>
 
-        <option value="2–4 hours">
-          2–4 hours
+        <option value="2-4 hours">
+          2-4 hours
         </option>
 
         <option value="More than 4 hours">
@@ -301,14 +303,6 @@
   </div>
 
 </div>
-
-<!-- HIDDEN IFRAME -->
-
-<iframe
-  name="hidden_iframe"
-  id="hidden_iframe"
-  style="display:none;"
-></iframe>
 
   <script src="script.js"></script>
 
