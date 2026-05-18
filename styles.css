@@ -1,0 +1,511 @@
+/* styles.css */
+
+@font-face {
+  font-family: 'AvenirBlack';
+  src: url('./fonts/Avenir-Black.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AvenirLight';
+  src: url('./fonts/Avenir-Light.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+
+  --bg: #F7F5F2;
+  --text: #111111;
+  --muted: #6B6B6B;
+  --accent: #F05A28;
+
+  --max-width: 1280px;
+  --content-width: 760px;
+
+  --radius-pill: 999px;
+
+  --transition:
+    0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255,255,255,0.8),
+      transparent 45%
+    ),
+    var(--bg);
+
+  color: var(--text);
+
+  font-family:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.page-wrapper {
+  width: 100%;
+}
+
+/* ── HERO: full-viewport image, no text ── */
+.hero {
+
+  width: 100%;
+  height: 100svh; /* svh accounts for mobile browser chrome */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.hero-image {
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center center;
+}
+
+/* ── CONTENT SECTION: headline · subtitle · CTA ── */
+.content-section {
+
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding:
+    8rem 1.5rem
+    6rem;
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.hero-title {
+
+  font-family: 'AvenirBlack', sans-serif;
+
+  font-size:
+    clamp(2.7rem, 6vw, 5.6rem);
+
+  line-height: 1.04;
+
+  letter-spacing: -0.05em;
+
+  margin-bottom: 2rem;
+}
+
+.hero-subtitle {
+
+  font-family: 'AvenirLight', sans-serif;
+
+  font-size:
+    clamp(1rem, 2vw, 1.45rem);
+
+  line-height: 1.9;
+
+  color: var(--muted);
+
+  max-width: 640px;
+
+  margin:
+    0 auto
+    3rem;
+}
+
+/* =========================
+   CTA BUTTON
+========================= */
+
+/* ── CTA: temple two-line style ── */
+.cta-button {
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.18rem;
+
+  min-width: 300px;
+
+  padding:
+    1.1rem
+    2.6rem
+    1.25rem;
+
+  background: var(--accent);
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: var(--radius-pill);
+
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+
+  margin-bottom: 7rem;
+}
+
+.cta-button:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+
+/* Top micro label: "APPLY FOR" */
+.cta-label {
+
+  font-family: 'AvenirLight', sans-serif;
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  opacity: 0.82;
+}
+
+/* Main text: "Early Access" */
+.cta-main {
+
+  font-family: 'AvenirBlack', sans-serif;
+
+  font-size: 1.15rem;
+
+  letter-spacing: 0.01em;
+}
+
+/* =========================
+   BRANDING
+========================= */
+
+.branding-section {
+
+  text-align: center;
+
+  padding:
+    0 1.5rem
+    5rem;
+}
+
+.fable-title {
+
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  gap: 0;
+
+  font-family: 'AvenirBlack', sans-serif;
+
+  font-size:
+    clamp(3rem, 7vw, 6rem);
+
+  letter-spacing: -0.075em;
+
+  line-height: 1;
+}
+
+.logo-o {
+
+  width:
+    clamp(1.95rem, 4.2vw, 3.9rem);
+
+  height:
+    clamp(1.95rem, 4.2vw, 3.9rem);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin:
+    0 -0.01em 0 0.01em;
+
+  transform:
+    translateY(-0.03em);
+}
+
+.logo-o img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+.fable-tagline {
+
+  font-weight: 400;
+
+  margin-top: 0.8rem;
+
+  font-family: 'AvenirLight', sans-serif;
+
+  color: var(--accent);
+
+  font-size:
+    clamp(1rem, 2vw, 1.5rem);
+}
+
+/* =========================
+   ZYRA SECTION
+========================= */
+
+.zyra-section {
+
+  text-align: center;
+
+  padding:
+    2rem 1.5rem
+    5rem;
+}
+
+.designed-by {
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.45em;
+
+  color: #666;
+
+  margin-bottom: 1.4rem;
+}
+
+.zyra-name {
+
+  font-family: 'AvenirBlack', sans-serif;
+
+  font-size:
+    clamp(1.5rem, 4vw, 3rem);
+
+  letter-spacing: 0.45em;
+
+  margin-bottom: 1.4rem;
+}
+
+.zyra-tagline {
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.35em;
+
+  color: var(--text);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+
+  padding:
+    0 1.5rem
+    3rem;
+}
+
+.socials {
+
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  margin-bottom: 4rem;
+}
+
+.socials a {
+
+  width: 28px;
+  height: 28px;
+
+  opacity: 0.6;
+
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+.socials a:hover {
+
+  opacity: 1;
+
+  transform: translateY(-1px);
+}
+
+.socials img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.footer-bottom {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 2rem;
+
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+
+  flex-wrap: wrap;
+}
+
+.footer-links {
+
+  display: flex;
+  gap: 2rem;
+
+  flex-wrap: wrap;
+}
+
+.footer-links a,
+.copyright {
+
+  color: #777;
+
+  font-size: 0.92rem;
+
+  text-decoration: none;
+
+  transition: opacity var(--transition);
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   FADE ANIMATIONS
+========================= */
+
+.fade-element {
+
+  opacity: 0;
+
+  transform: translateY(24px);
+
+  transition:
+    opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-element.visible {
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .content-section {
+    padding-top: 3.5rem;
+  }
+
+  .hero-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-subtitle {
+
+    line-height: 1.7;
+
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-button {
+
+    min-width: 100%;
+
+    margin-bottom: 5rem;
+  }
+
+  .footer-bottom {
+
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .zyra-name {
+    letter-spacing: 0.28em;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+    scroll-behavior: auto !important;
+  }
+
+  .fade-element {
+
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+}
