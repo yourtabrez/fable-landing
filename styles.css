@@ -137,6 +137,8 @@ body {
 
   letter-spacing: -0.05em;
 
+  max-width: 980px;
+
   margin-bottom: 2rem;
 }
 
@@ -147,7 +149,7 @@ body {
   font-size:
     clamp(1rem, 2vw, 1.45rem);
 
-  line-height: 1.9;
+  line-height: 1.75;
 
   color: var(--muted);
 
@@ -316,7 +318,7 @@ body {
 
   font-size: 0.75rem;
 
-  letter-spacing: 0.45em;
+  letter-spacing: 0.36em;
 
   color: #666;
 
@@ -330,7 +332,7 @@ body {
   font-size:
     clamp(1.5rem, 4vw, 3rem);
 
-  letter-spacing: 0.45em;
+  letter-spacing: 0.36em;
 
   margin-bottom: 1.4rem;
 }
