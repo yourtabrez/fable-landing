@@ -137,8 +137,6 @@ body {
 
   letter-spacing: -0.05em;
 
-  max-width: 980px;
-
   margin-bottom: 2rem;
 }
 
@@ -149,7 +147,7 @@ body {
   font-size:
     clamp(1rem, 2vw, 1.45rem);
 
-  line-height: 1.75;
+  line-height: 1.9;
 
   color: var(--muted);
 
@@ -171,9 +169,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: none;
-  cursor: pointer;
-  font-family: AvenirLight;
 
   gap: 0.18rem;
 
@@ -318,7 +313,7 @@ body {
 
   font-size: 0.75rem;
 
-  letter-spacing: 0.36em;
+  letter-spacing: 0.45em;
 
   color: #666;
 
@@ -332,7 +327,7 @@ body {
   font-size:
     clamp(1.5rem, 4vw, 3rem);
 
-  letter-spacing: 0.36em;
+  letter-spacing: 0.45em;
 
   margin-bottom: 1.4rem;
 }
@@ -513,354 +508,4 @@ body {
     transition: none !important;
   }
 
-}
-
-/* ========================================
-   FORM POPUP
-======================================== */
-
-.form-popup {
-
-  position: fixed;
-
-  inset: 0;
-
-  z-index: 9999;
-
-  display: none;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 1.5rem;
-}
-
-.form-popup.active {
-
-  display: flex;
-}
-
-.form-overlay {
-
-  position: absolute;
-
-  inset: 0;
-
-  background: rgba(0,0,0,0.42);
-
-  backdrop-filter: blur(10px);
-}
-
-.form-container {
-
-  position: relative;
-
-  width: 100%;
-
-  max-width: 520px;
-
-  background: #f7f5f2;
-
-  border-radius: 32px;
-
-  padding: 2.7rem;
-
-  z-index: 2;
-
-  animation: popupFade .35s ease;
-
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.14);
-
-  overflow: visible;
-}
-
-@keyframes popupFade {
-
-  from {
-
-    opacity: 0;
-
-    transform:
-      translateY(18px)
-      scale(.985);
-  }
-
-  to {
-
-    opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1);
-  }
-}
-
-.close-btn {
-
-  position: absolute;
-
-  top: 18px;
-
-  right: 22px;
-
-  border: none;
-
-  background: none;
-
-  font-size: 2rem;
-
-  line-height: 1;
-
-  cursor: pointer;
-
-  color: #111;
-
-  transition:
-    opacity .2s ease,
-    transform .2s ease;
-}
-
-.close-btn:hover {
-
-  opacity: .65;
-
-  transform: scale(.96);
-}
-
-.form-container h2 {
-
-  font-family:
-    'AvenirBlack',
-    sans-serif;
-
-  font-size:
-    clamp(1.8rem, 4vw, 2.3rem);
-
-  line-height: 1.08;
-
-  letter-spacing: -0.04em;
-
-  margin-bottom: .85rem;
-
-  color: #111;
-}
-
-.form-subtext {
-
-  color: #6d6a66;
-
-  line-height: 1.65;
-
-  font-size: .98rem;
-
-  margin-bottom: 2rem;
-
-  max-width: 90%;
-}
-
-.form-container form {
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 1.15rem;
-}
-
-/* =========================
-   INPUTS + SELECTS
-========================= */
-
-.form-container input,
-.form-container select {
-
-  width: 100%;
-
-  height: 58px;
-
-  border:
-    1px solid #e4dfd9;
-
-  border-radius: 18px;
-
-  padding:
-    0 1.15rem;
-
-  font-size: 1rem;
-
-  font-family:
-    'AvenirMedium',
-    sans-serif;
-
-  background: #ffffff;
-
-  color: #111;
-
-  outline: none;
-
-  transition:
-    border-color .25s ease,
-    box-shadow .25s ease,
-    transform .25s ease;
-
-  appearance: none;
-
-  -webkit-appearance: none;
-}
-
-/* =========================
-   PLACEHOLDER
-========================= */
-
-.form-container input::placeholder {
-
-  color: #928d87;
-}
-
-/* =========================
-   SELECT CUSTOM ARROW
-========================= */
-
-.form-container select {
-
-  cursor: pointer;
-
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-
-  background-repeat: no-repeat;
-
-  background-position:
-    right 1rem center;
-
-  background-size: 16px;
-
-  padding-right: 3rem;
-}
-
-/* =========================
-   FOCUS STATE
-========================= */
-
-.form-container input:focus,
-.form-container select:focus {
-
-  border-color:
-    rgba(240, 90, 40, 0.5);
-
-  box-shadow:
-    0 0 0 4px rgba(240, 90, 40, 0.08);
-
-  transform: translateY(-1px);
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.submit-btn {
-
-  height: 60px;
-
-  border: none;
-
-  border-radius: 999px;
-
-  background: #f05a28;
-
-  color: white;
-
-  font-size: 1rem;
-
-  font-family:
-    'AvenirBlack',
-    sans-serif;
-
-  cursor: pointer;
-
-  margin-top: .25rem;
-
-  transition:
-    transform .25s ease,
-    opacity .25s ease,
-    box-shadow .25s ease;
-}
-
-.submit-btn:hover {
-
-  transform: translateY(-1px);
-
-  opacity: .96;
-
-  box-shadow:
-    0 14px 30px rgba(240,90,40,0.22);
-}
-
-/* =========================
-   SUCCESS MESSAGE
-========================= */
-
-.success-message {
-
-  text-align: center;
-
-  padding:
-    2rem 1rem;
-}
-
-.success-message h3 {
-
-  font-family:
-    'AvenirBlack',
-    sans-serif;
-
-  font-size:
-    clamp(1.9rem, 4vw, 2.4rem);
-
-  line-height: 1.1;
-
-  margin-bottom: 1rem;
-
-  letter-spacing: -0.04em;
-}
-
-.success-message p {
-
-  color: #666;
-
-  line-height: 1.7;
-
-  font-size: 1rem;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 640px) {
-
-  .form-container {
-
-    padding:
-      2rem 1.4rem;
-
-    border-radius: 28px;
-  }
-
-  .form-container h2 {
-
-    font-size: 1.9rem;
-  }
-
-  .form-subtext {
-
-    max-width: 100%;
-  }
-
-  .submit-btn {
-
-    height: 58px;
-  }
 }
