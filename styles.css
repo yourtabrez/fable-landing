@@ -123,6 +123,9 @@ body {
 
   object-fit: contain;
   object-position: center center;
+
+  /* Dissolves the image's white bg into the cream page bg seamlessly */
+  mix-blend-mode: multiply;
 }
 
 /* ── CONTENT SECTION: headline · subtitle · CTA ── */
@@ -135,7 +138,7 @@ body {
 
   padding:
     8rem 1.5rem
-    6rem;
+    3rem;
 
   text-align: center;
 
@@ -155,9 +158,9 @@ body {
   font-size:
     clamp(2.7rem, 6vw, 5.6rem);
 
-  line-height: 1.04;
+  line-height: 1.1;
 
-  letter-spacing: -0.05em;
+  letter-spacing: -0.035em;
 
   margin-bottom: 2rem;
 }
@@ -169,7 +172,7 @@ body {
   font-size:
     clamp(1rem, 2vw, 1.45rem);
 
-  line-height: 1.9;
+  line-height: 1.6;
 
   color: var(--muted);
 
@@ -212,14 +215,16 @@ body {
 
   transition:
     opacity var(--transition),
-    transform var(--transition);
+    transform var(--transition),
+    box-shadow var(--transition);
 
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
 }
 
 .cta-button:hover {
   opacity: 0.92;
   transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(240, 90, 40, 0.18);
 }
 
 .cta-button:focus-visible {
@@ -261,7 +266,7 @@ body {
 
   padding:
     0 1.5rem
-    5rem;
+    1.5rem;
 }
 
 .fable-title {
@@ -277,7 +282,7 @@ body {
   font-size:
     clamp(3rem, 7vw, 6rem);
 
-  letter-spacing: -0.075em;
+  letter-spacing: 0.04em;
 
   line-height: 1;
 }
@@ -285,17 +290,18 @@ body {
 .logo-o {
 
   width:
-    clamp(1.95rem, 4.2vw, 3.9rem);
+    clamp(2.1rem, 4.6vw, 4.2rem);
 
   height:
-    clamp(1.95rem, 4.2vw, 3.9rem);
+    clamp(2.1rem, 4.6vw, 4.2rem);
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
+  /* Pull "ne" closer to compensate for positive letter-spacing on parent */
   margin:
-    0 -0.01em 0 0.01em;
+    0 0.04em 0 0.01em;
 
   transform:
     translateY(-0.03em);
@@ -334,19 +340,19 @@ body {
   text-align: center;
 
   padding:
-    2rem 1.5rem
-    5rem;
+    0.5rem 1.5rem
+    2.5rem;
 }
 
 .designed-by {
 
-  font-size: 0.75rem;
+  font-size: 0.7rem;
 
-  letter-spacing: 0.45em;
+  letter-spacing: 0.35em;
 
-  color: #666;
+  color: #888;
 
-  margin-bottom: 1.4rem;
+  margin-bottom: 0.6rem;
 }
 
 .zyra-name {
@@ -354,11 +360,11 @@ body {
   font-family: 'AvenirBlack', sans-serif;
 
   font-size:
-    clamp(1.5rem, 4vw, 3rem);
+    clamp(1rem, 2.5vw, 1.8rem);
 
   letter-spacing: 0.45em;
 
-  margin-bottom: 1.4rem;
+  margin-bottom: 0.6rem;
 }
 
 .zyra-tagline {
@@ -378,19 +384,59 @@ body {
 
   padding:
     0 1.5rem
-    3rem;
+    2.5rem;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
 
+/* Single-row footer: links · socials · copyright */
+.footer-bottom {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2rem;
+
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+
+  flex-wrap: wrap;
+}
+
+.footer-links {
+
+  display: flex;
+  gap: 1.5rem;
+
+  flex-wrap: wrap;
+}
+
+.footer-links a,
+.copyright {
+
+  color: #777;
+
+  font-size: 0.82rem;
+
+  text-decoration: none;
+
+  transition: opacity var(--transition);
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+/* Socials inline — tap target 44×44px, icon 22px */
 .socials {
 
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-
-  margin-bottom: 4rem;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-/* Tap target: visually 28px icon, but touch area 44×44px */
 .socials a {
 
   width: 44px;
@@ -400,7 +446,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  opacity: 0.6;
+  opacity: 0.75;
 
   transition:
     opacity var(--transition),
@@ -416,49 +462,13 @@ body {
 
 .socials img {
 
-  width: 28px;
-  height: 28px;
+  width: 25px;
+  height: 25px;
 
+  /* Force identical bounding box regardless of SVG viewBox */
+  display: block;
   object-fit: contain;
-}
-
-.footer-bottom {
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 2rem;
-
-  max-width: var(--max-width);
-
-  margin: 0 auto;
-
-  flex-wrap: wrap;
-}
-
-.footer-links {
-
-  display: flex;
-  gap: 2rem;
-
-  flex-wrap: wrap;
-}
-
-.footer-links a,
-.copyright {
-
-  color: #777;
-
-  font-size: 0.92rem;
-
-  text-decoration: none;
-
-  transition: opacity var(--transition);
-}
-
-.footer-links a:hover {
-  opacity: 0.7;
+  flex-shrink: 0;
 }
 
 /* =========================
@@ -489,6 +499,13 @@ body {
 
 @media (max-width: 768px) {
 
+  /* Fill the mobile frame — child centered, no wasted sky */
+  .hero-image {
+    object-fit: cover;
+    object-position: center 20%;
+    mix-blend-mode: multiply;
+  }
+
   .content-section {
     padding-top: 3.5rem;
   }
@@ -499,7 +516,7 @@ body {
 
   .hero-subtitle {
 
-    line-height: 1.7;
+    line-height: 1.55;
 
     margin-bottom: 2.5rem;
   }
@@ -508,19 +525,27 @@ body {
 
     min-width: 100%;
 
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
   }
 
   .footer-bottom {
-
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
+    justify-content: center;
+    gap: 1rem;
   }
 
   .footer-links {
     justify-content: center;
+    order: 1;
+  }
+
+  .socials {
+    order: 2;
+  }
+
+  .copyright {
+    order: 3;
+    width: 100%;
+    text-align: center;
   }
 
   .zyra-name {
