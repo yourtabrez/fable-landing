@@ -9,6 +9,9 @@ const observer = new IntersectionObserver(
 
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+
+        // Stop watching once visible — no need to re-check
+        observer.unobserve(entry.target);
       }
 
     });
