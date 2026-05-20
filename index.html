@@ -3,10 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Fable One — Stories That Grow With Your Child</title>
 
@@ -15,8 +12,32 @@
     content="Inviting parents, educators, and child development experts to help shape the future of storytelling with us."
   />
 
-  <link rel="preload" href="./fonts/Avenir-Black.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="./fonts/Avenir-Light.ttf" as="font" type="font/ttf" crossorigin>
+  <!-- ─── Canonical ─── -->
+  <link rel="canonical" href="https://www.zyralab.com/" />
+
+  <!-- ─── Favicon ─── -->
+  <link rel="icon" type="image/png" href="./assets/Zyra_logo_tpw.png" />
+  <link rel="apple-touch-icon" href="./assets/Zyra_logo_tpw.png" />
+
+  <!-- ─── Open Graph ─── -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://www.zyralab.com/" />
+  <meta property="og:title"       content="Fable One — Stories That Grow With Your Child" />
+  <meta property="og:description" content="Inviting parents, educators, and child development experts to help shape the future of storytelling with us." />
+  <meta property="og:image"       content="https://www.zyralab.com/assets/Zyra_logo_tpw.png" />
+  <meta property="og:image:alt"   content="Zyra Lab logo" />
+  <meta property="og:site_name"   content="Zyra Lab" />
+
+  <!-- ─── Twitter / X Card ─── -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:site"        content="@labzyra" />
+  <meta name="twitter:title"       content="Fable One — Stories That Grow With Your Child" />
+  <meta name="twitter:description" content="Inviting parents, educators, and child development experts to help shape the future of storytelling with us." />
+  <meta name="twitter:image"       content="https://www.zyralab.com/assets/Zyra_logo_tpw.png" />
+
+  <!-- ─── Font preload — no crossorigin on same-origin fonts ─── -->
+  <link rel="preload" href="./fonts/Avenir-Black.ttf" as="font" type="font/ttf" />
+  <link rel="preload" href="./fonts/Avenir-Light.ttf" as="font" type="font/ttf" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -29,9 +50,11 @@
     <section class="hero">
       <img
         src="./assets/hero-child.png"
-        alt="Child imagining a story world"
+        alt="Child sitting cross-legged on a rug, gazing upward with wonder, holding the Fable One device"
         class="hero-image"
         loading="eager"
+        fetchpriority="high"
+        decoding="sync"
       />
     </section>
 
@@ -47,7 +70,12 @@
         to help shape the future of storytelling with us.
       </p>
 
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeCMzyxlo9mpSDvW3yO_nlMkARu8zDjhjxkdJv_LFT3b0uXEw/viewform?usp=header" class="cta-button">
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeCMzyxlo9mpSDvW3yO_nlMkARu8zDjhjxkdJv_LFT3b0uXEw/viewform?usp=header"
+        class="cta-button"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         <span class="cta-label">APPLY FOR</span>
         <span class="cta-main">Early Access</span>
       </a>
@@ -57,30 +85,32 @@
     <!-- BRANDING -->
     <section class="branding-section fade-element">
 
-  <div class="fable-branding">
+      <div class="fable-branding">
 
-    <h2 class="fable-title">
+        <h2 class="fable-title">
 
-      <span>Fable&nbsp;</span>
+          <span>Fable&nbsp;</span>
 
-      <span class="logo-o">
-        <img
-          src="./assets/zyra-abstract-logo.png"
-          alt="O"
-        />
-      </span>
+          <span class="logo-o">
+            <img
+              src="./assets/zyra-abstract-logo.png"
+              alt="O"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
 
-      <span>ne</span>
+          <span>ne</span>
 
-    </h2>
+        </h2>
 
-    <p class="fable-tagline">
-      Stories that grow with your child.
-    </p>
+        <p class="fable-tagline">
+          Stories that grow with your child.
+        </p>
 
-  </div>
+      </div>
 
-</section>
+    </section>
 
     <!-- ZYRA LAB -->
     <section class="zyra-section fade-element">
@@ -106,15 +136,30 @@
 
     <div class="socials">
 
-      <a href="https://www.instagram.com/labzyra/" aria-label="Instagram">
+      <a
+        href="https://www.instagram.com/labzyra/"
+        aria-label="Instagram"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         <img src="./assets/instagram.svg" alt="" />
       </a>
 
-      <a href="https://x.com/labzyra" aria-label="X">
+      <a
+        href="https://x.com/labzyra"
+        aria-label="X (formerly Twitter)"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         <img src="./assets/x.svg" alt="" />
       </a>
 
-      <a href="https://www.linkedin.com/company/zyralab" aria-label="LinkedIn">
+      <a
+        href="https://www.linkedin.com/company/zyralab"
+        aria-label="LinkedIn"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
         <img src="./assets/linkedin.svg" alt="" />
       </a>
 
@@ -123,8 +168,16 @@
     <div class="footer-bottom">
 
       <div class="footer-links">
-        <a href="https://docs.google.com/document/d/1Axi_kWKTOYsJ65IZuCqoUgO8gasDH2fRif_5PHAmY3U/edit?usp=sharing">Privacy Policy</a>
-        <a href="https://docs.google.com/document/d/18F7-KLL_uhVSHjILKec7DEQHlHbIBLPNMGOa_INdUXg/edit?usp=sharing">Terms of Use</a>
+        <a
+          href="https://docs.google.com/document/d/1Axi_kWKTOYsJ65IZuCqoUgO8gasDH2fRif_5PHAmY3U/edit?usp=sharing"
+          rel="noopener noreferrer"
+          target="_blank"
+        >Privacy Policy</a>
+        <a
+          href="https://docs.google.com/document/d/18F7-KLL_uhVSHjILKec7DEQHlHbIBLPNMGOa_INdUXg/edit?usp=sharing"
+          rel="noopener noreferrer"
+          target="_blank"
+        >Terms of Use</a>
       </div>
 
       <p class="copyright">
@@ -135,7 +188,7 @@
 
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
 </body>
 </html>
