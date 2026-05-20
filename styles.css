@@ -44,7 +44,12 @@
 }
 
 html {
+
   scroll-behavior: smooth;
+
+  /* Prevent iOS text auto-inflation on rotate */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -52,7 +57,7 @@ body {
   background:
     radial-gradient(
       circle at top,
-      rgba(255,255,255,0.8),
+      rgba(255, 255, 255, 0.8),
       transparent 45%
     ),
     var(--bg);
@@ -69,6 +74,20 @@ body {
   text-rendering: optimizeLegibility;
 
   overflow-x: hidden;
+
+  /* Remove iOS tap flash on interactive elements */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   GLOBAL FOCUS
+========================= */
+
+/* Visible keyboard focus ring — accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 /* =========================
@@ -83,7 +102,10 @@ body {
 .hero {
 
   width: 100%;
-  height: 100svh; /* svh accounts for mobile browser chrome */
+
+  /* svh fallback for older browsers */
+  height: 100vh;
+  height: 100svh;
 
   display: flex;
   align-items: center;
@@ -162,7 +184,6 @@ body {
    CTA BUTTON
 ========================= */
 
-/* ── CTA: temple two-line style ── */
 .cta-button {
 
   display: inline-flex;
@@ -187,6 +208,8 @@ body {
 
   border-radius: var(--radius-pill);
 
+  cursor: pointer;
+
   transition:
     opacity var(--transition),
     transform var(--transition);
@@ -197,6 +220,12 @@ body {
 .cta-button:hover {
   opacity: 0.92;
   transform: translateY(-2px);
+}
+
+.cta-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-pill);
 }
 
 /* Top micro label: "APPLY FOR" */
@@ -361,10 +390,15 @@ body {
   margin-bottom: 4rem;
 }
 
+/* Tap target: visually 28px icon, but touch area 44×44px */
 .socials a {
 
-  width: 28px;
-  height: 28px;
+  width: 44px;
+  height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   opacity: 0.6;
 
@@ -382,8 +416,8 @@ body {
 
 .socials img {
 
-  width: 100%;
-  height: 100%;
+  width: 28px;
+  height: 28px;
 
   object-fit: contain;
 }
